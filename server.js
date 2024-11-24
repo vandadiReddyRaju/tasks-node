@@ -11,8 +11,10 @@ const db = new sqlite3.Database("./tasks.db");
 app.get("/tasks",async(req,res)=>{
     const query = `
     SELECT * FROM tasks`;
-
+    console.log("Got got");
     const ans = await db.all(query);
+
+    
 
     res.send(ans.json());
 })
